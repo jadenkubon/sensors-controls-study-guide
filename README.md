@@ -3,7 +3,7 @@
 A single-page study tool built from two graded course tests. No build step, no dependencies —
 one self-contained `index.html`.
 
-**Live:** https://jadenkubon.github.io/sensors-controls-study-guide/
+**Live:** https://jadenkubon.com/sensors-controls-study-guide/
 
 ## What's in it
 
