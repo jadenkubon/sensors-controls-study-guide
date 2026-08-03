@@ -1,0 +1,1008 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Complete review of Test 1 and Test 2 for an industrial sensors and motor controls course: every question with keyed answers, a concept sheet, and a flashcard deck.">
+<meta name="color-scheme" content="light dark">
+<title>Sensors &amp; Controls — Test 1 &amp; 2 Review</title>
+<style>
+:root{
+  --ground:#e6e9ec;
+  --surface:#ffffff;
+  --surface-2:#f4f6f7;
+  --ink:#161b1f;
+  --ink-2:#4a565e;
+  --ink-3:#78858d;
+  --rail:#2f4858;
+  --rail-soft:#c3ccd2;
+  --accent:#e0a200;
+  --accent-ink:#7a5800;
+  --live:#166b4c;
+  --live-bg:#e2f0ea;
+  --fault:#b3372c;
+  --fault-bg:#f8e6e3;
+  --hair:#d3d9dd;
+  --shadow:0 1px 2px rgba(20,35,45,.06),0 6px 20px -12px rgba(20,35,45,.30);
+  --display:"Arial Narrow","Roboto Condensed","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --body:Charter,"Bitstream Charter","Iowan Old Style","Source Serif Pro",Georgia,serif;
+  --mono:ui-monospace,"Cascadia Mono",Consolas,"SF Mono","DejaVu Sans Mono",monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --ground:#0e1317;
+    --surface:#161d23;
+    --surface-2:#1d262d;
+    --ink:#e3e8ea;
+    --ink-2:#a3b0b8;
+    --ink-3:#7b8990;
+    --rail:#8fb2c4;
+    --rail-soft:#33434e;
+    --accent:#f0bc3c;
+    --accent-ink:#f0bc3c;
+    --live:#5ec49a;
+    --live-bg:#12312a;
+    --fault:#f08a7c;
+    --fault-bg:#38201e;
+    --hair:#2a353d;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -14px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0e1317;--surface:#161d23;--surface-2:#1d262d;--ink:#e3e8ea;--ink-2:#a3b0b8;--ink-3:#7b8990;
+  --rail:#8fb2c4;--rail-soft:#33434e;--accent:#f0bc3c;--accent-ink:#f0bc3c;--live:#5ec49a;--live-bg:#12312a;
+  --fault:#f08a7c;--fault-bg:#38201e;--hair:#2a353d;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -14px rgba(0,0,0,.8);
+}
+:root[data-theme="light"]{
+  --ground:#e6e9ec;--surface:#ffffff;--surface-2:#f4f6f7;--ink:#161b1f;--ink-2:#4a565e;--ink-3:#78858d;
+  --rail:#2f4858;--rail-soft:#c3ccd2;--accent:#e0a200;--accent-ink:#7a5800;--live:#166b4c;--live-bg:#e2f0ea;
+  --fault:#b3372c;--fault-bg:#f8e6e3;--hair:#d3d9dd;
+  --shadow:0 1px 2px rgba(20,35,45,.06),0 6px 20px -12px rgba(20,35,45,.30);
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;letter-spacing:.01em;text-wrap:balance;margin:0}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+
+/* ---------- masthead ---------- */
+.masthead{background:var(--rail);color:#fff;padding:26px 20px 0}
+:root[data-theme="dark"] .masthead,
+:root:not([data-theme]) .masthead{}
+@media (prefers-color-scheme:dark){.masthead{background:#111a20;border-bottom:1px solid var(--hair)}}
+:root[data-theme="dark"] .masthead{background:#111a20;border-bottom:1px solid var(--hair)}
+:root[data-theme="light"] .masthead{background:#2f4858;border-bottom:0}
+.mast-in{max-width:1080px;margin:0 auto}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 8px}
+.masthead h1{font-size:clamp(28px,5.2vw,46px);line-height:1.02;text-transform:uppercase;
+  letter-spacing:-.005em;color:#fff}
+.mast-sub{max-width:62ch;color:#c8d6de;font-size:15px;margin:10px 0 0}
+:root[data-theme="light"] .mast-sub{color:#c8d6de}
+.scoreline{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;font-family:var(--mono);font-size:11.5px;
+  letter-spacing:.08em;text-transform:uppercase}
+.chip{border:1px solid rgba(255,255,255,.28);border-radius:2px;padding:4px 9px;color:#dbe6ec}
+.chip b{color:var(--accent);font-weight:700}
+
+/* ---------- tabs ---------- */
+.tabs{display:flex;gap:2px;margin-top:22px;overflow-x:auto}
+.tab{background:transparent;border:0;border-bottom:3px solid transparent;padding:10px 16px 12px;
+  font-family:var(--display);font-size:15px;text-transform:uppercase;letter-spacing:.12em;
+  color:#a9bcc7;white-space:nowrap}
+.tab:hover{color:#fff}
+.tab[aria-selected="true"]{color:#fff;border-bottom-color:var(--accent)}
+
+/* ---------- toolbar ---------- */
+.toolbar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--hair);
+  padding:10px 20px}
+.tool-in{max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.seg{display:flex;border:1px solid var(--hair);border-radius:3px;overflow:hidden}
+.seg button{background:var(--surface);border:0;padding:6px 13px;font-family:var(--mono);font-size:11.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.seg button+button{border-left:1px solid var(--hair)}
+.seg button[aria-pressed="true"]{background:var(--rail);color:var(--surface)}
+:root[data-theme="dark"] .seg button[aria-pressed="true"]{background:var(--rail);color:#0e1317}
+@media (prefers-color-scheme:dark){.seg button[aria-pressed="true"]{background:var(--rail);color:#0e1317}}
+:root[data-theme="light"] .seg button[aria-pressed="true"]{background:#2f4858;color:#fff}
+.search{flex:1 1 190px;min-width:150px;background:var(--surface-2);border:1px solid var(--hair);
+  border-radius:3px;padding:7px 11px;font-family:var(--body);font-size:14px;color:var(--ink)}
+.search::placeholder{color:var(--ink-3)}
+.count{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;color:var(--ink-3);
+  text-transform:uppercase;margin-left:auto}
+
+main{max-width:1080px;margin:0 auto;padding:30px 20px 90px}
+[hidden]{display:none !important}
+
+/* ---------- ladder-rung question cards ---------- */
+.qgroup{margin:0 0 10px}
+.grouphead{display:flex;align-items:baseline;gap:12px;margin:36px 0 18px;padding-bottom:8px;
+  border-bottom:2px solid var(--rail)}
+.grouphead:first-child{margin-top:0}
+.grouphead h2{font-size:22px;text-transform:uppercase;letter-spacing:.06em}
+.grouphead .meta{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  text-transform:uppercase;margin-left:auto}
+
+.rung{display:grid;grid-template-columns:52px 1fr;background:var(--surface);border:1px solid var(--hair);
+  border-radius:3px;margin:0 0 12px;box-shadow:var(--shadow);overflow:hidden}
+.rung.missed{border-left:3px solid var(--fault)}
+.gutter{position:relative;background:var(--surface-2);border-right:1px solid var(--hair);
+  display:flex;justify-content:center;padding-top:16px}
+.gutter::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;background:var(--rail-soft)}
+.tag{position:relative;width:34px;height:30px;background:var(--surface);border:1.5px solid var(--rail);
+  clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);
+  display:grid;place-items:center;font-family:var(--mono);font-size:12.5px;font-weight:700;color:var(--rail)}
+.qbody{padding:15px 18px 16px;min-width:0}
+.qtype{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:5px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.flag{color:var(--fault);border:1px solid currentColor;border-radius:2px;padding:1px 5px;font-size:9px}
+.qtext{font-size:16.5px;margin:0 0 11px;line-height:1.45}
+.qtext em{font-style:normal;border-bottom:2px solid var(--accent);padding-bottom:1px}
+.opts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px}
+.opts li{display:grid;grid-template-columns:22px 1fr;gap:8px;padding:5px 8px;border-radius:3px;
+  font-size:15px;color:var(--ink-2);line-height:1.4}
+.opts .ltr{font-family:var(--mono);font-size:12px;color:var(--ink-3);padding-top:2px}
+.reveal .opts li.right{background:var(--live-bg);color:var(--ink);font-weight:600}
+.reveal .opts li.right .ltr{color:var(--live);font-weight:700}
+.ansline{margin:11px 0 0;padding:9px 12px;background:var(--live-bg);border-left:3px solid var(--live);
+  border-radius:0 3px 3px 0;font-size:14.5px}
+.ansline .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--live);display:block;margin-bottom:2px}
+.why{margin:9px 0 0;font-size:14px;color:var(--ink-2)}
+.why b{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);
+  font-weight:400;margin-right:6px}
+.hidden-ans .ansline,.hidden-ans .why{display:none}
+.hidden-ans .opts li.right{background:transparent;color:var(--ink-2);font-weight:400}
+.hidden-ans .opts li.right .ltr{color:var(--ink-3);font-weight:400}
+
+/* truth table */
+.tt{border-collapse:collapse;font-family:var(--mono);font-size:13px;margin:4px 0 0;
+  font-variant-numeric:tabular-nums}
+.tt th,.tt td{border:1px solid var(--hair);padding:3px 13px;text-align:center}
+.tt th{background:var(--surface-2);font-size:11px;letter-spacing:.1em;color:var(--ink-3);font-weight:400}
+.tt td.y{font-weight:700;color:var(--rail)}
+.hidden-ans .tt td.y{color:transparent;background:repeating-linear-gradient(135deg,var(--surface-2),var(--surface-2) 3px,transparent 3px,transparent 6px)}
+
+.matchlist{list-style:none;margin:6px 0 0;padding:0;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:4px 18px}
+.matchlist li{display:grid;grid-template-columns:20px 1fr;gap:8px;font-size:14.5px;color:var(--ink-2)}
+.matchlist .ltr{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+
+.note{background:var(--surface-2);border:1px dashed var(--hair);border-radius:3px;padding:12px 15px;
+  font-size:14px;color:var(--ink-2);margin:14px 0 0}
+.note b{color:var(--ink);font-family:var(--display);letter-spacing:.04em}
+
+/* ---------- concepts ---------- */
+.lede{max-width:64ch;font-size:17px;color:var(--ink-2);margin:0 0 30px}
+.concepts{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px;align-items:start}
+.card{background:var(--surface);border:1px solid var(--hair);border-radius:3px;padding:17px 19px 19px;
+  box-shadow:var(--shadow)}
+.card.wide{grid-column:1/-1}
+.card h3{font-size:16px;text-transform:uppercase;letter-spacing:.08em;color:var(--rail);
+  padding-bottom:7px;border-bottom:1px solid var(--hair);margin-bottom:11px}
+.card h3 span{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--ink-3);
+  float:right;text-transform:uppercase;font-weight:400;padding-top:3px}
+.card p{margin:0 0 9px;font-size:15px}
+.card p:last-child{margin-bottom:0}
+.kv{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:14.5px}
+.kv li{display:grid;grid-template-columns:auto 1fr;gap:10px}
+.kv .k{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--rail);
+  text-transform:uppercase;padding-top:3px;white-space:nowrap}
+:root[data-theme="light"] .kv .k{color:#2f4858}
+.pull{background:var(--surface-2);border-left:3px solid var(--accent);padding:8px 12px;margin:11px 0 0;
+  font-size:14px;color:var(--ink-2)}
+.pull b{color:var(--ink)}
+figure{margin:0 0 12px}
+figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);margin-top:6px}
+.svgwrap{overflow-x:auto;background:var(--surface-2);border:1px solid var(--hair);border-radius:3px;
+  padding:12px}
+svg{display:block;max-width:100%;height:auto;margin:0 auto}
+svg.sm{max-width:250px}
+.dg{stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.dg-f{fill:var(--ink);stroke:none}
+.dg-a{stroke:var(--accent);fill:none;stroke-width:2}
+.lbl-s{font-family:var(--mono);font-size:11px;fill:var(--ink-2)}
+.lbl-k{font-family:var(--mono);font-size:12px;font-weight:700;fill:var(--rail)}
+
+/* ---------- flashcards ---------- */
+.deckbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 20px}
+.pill{background:var(--surface);border:1px solid var(--hair);border-radius:99px;padding:5px 13px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.pill[aria-pressed="true"]{background:var(--rail);color:var(--surface);border-color:var(--rail)}
+:root[data-theme="dark"] .pill[aria-pressed="true"]{color:#0e1317}
+@media (prefers-color-scheme:dark){.pill[aria-pressed="true"]{color:#0e1317}}
+:root[data-theme="light"] .pill[aria-pressed="true"]{background:#2f4858;color:#fff}
+
+.stage{perspective:1600px;margin:0 auto;max-width:640px}
+.card3d{position:relative;width:100%;min-height:290px;transform-style:preserve-3d;
+  transition:transform .5s cubic-bezier(.3,.8,.3,1);cursor:pointer;border:0;background:none;padding:0;
+  display:block;text-align:left}
+.card3d.flipped{transform:rotateX(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  background:var(--surface);border:1px solid var(--hair);border-radius:4px;box-shadow:var(--shadow);
+  padding:26px 28px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.face.back{transform:rotateX(180deg);background:var(--surface-2);border-color:var(--rail-soft)}
+.face .cat{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent-ink);position:absolute;top:16px;left:28px}
+.face .side{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink-3);position:absolute;top:16px;right:28px}
+.face .q{font-family:var(--display);font-size:clamp(19px,3.4vw,25px);line-height:1.22;
+  text-transform:none;letter-spacing:0}
+.face .a{font-size:18px;line-height:1.45}
+.face .a strong{color:var(--rail);font-family:var(--display);font-size:21px;letter-spacing:.01em;
+  display:block;margin-bottom:6px}
+:root[data-theme="light"] .face .a strong{color:#2f4858}
+.face .hint{position:absolute;bottom:14px;left:28px;font-family:var(--mono);font-size:10px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.deckctl{display:flex;align-items:center;justify-content:center;gap:10px;margin:18px 0 0}
+.deckctl button{background:var(--surface);border:1px solid var(--hair);border-radius:3px;padding:8px 16px;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.deckctl button:hover{border-color:var(--rail);color:var(--ink)}
+.progress{font-family:var(--mono);font-size:12px;color:var(--ink-3);min-width:86px;text-align:center;
+  font-variant-numeric:tabular-nums}
+.bar{height:2px;background:var(--hair);border-radius:2px;margin:14px auto 0;max-width:640px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);transition:width .3s ease}
+
+footer{max-width:1080px;margin:0 auto;padding:0 20px 60px;color:var(--ink-3);font-size:13px;
+  font-family:var(--mono);letter-spacing:.04em}
+
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms !important}}
+@media (max-width:600px){
+  .rung{grid-template-columns:40px 1fr}
+  .qbody{padding:13px 14px 14px}
+  main{padding:22px 14px 70px}
+  .masthead{padding:20px 14px 0}
+  .toolbar{padding:9px 14px}
+}
+</style>
+
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+img,svg{vertical-align:middle}
+.themetoggle{position:absolute;top:18px;right:20px;background:transparent;
+  border:1px solid rgba(255,255,255,.3);border-radius:2px;color:#c8d6de;padding:4px 11px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase}
+.themetoggle:hover{color:#fff;border-color:rgba(255,255,255,.6)}
+.masthead{position:relative}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="mast-in">
+    <p class="eyebrow">Industrial Sensors &amp; Motor Controls</p>
+    <h1>Test 1 &amp; Test 2 — Complete Review</h1>
+    <p class="mast-sub">Every question from both graded tests, rebuilt with the keyed answer and a one-line
+      reason. Plus a concept sheet and a flashcard deck covering the same material.</p>
+    <div class="scoreline">
+      <span class="chip">Test 1 · CH 1, 2, 4 + Logic Gates · 44 Q · scored <b>100%</b></span>
+      <span class="chip">Test 2 · CH 6, 7 + Circuits · 40 Q · scored <b>89.68%</b></span>
+    </div>
+    <button class="themetoggle" id="themetoggle" type="button" aria-label="Switch colour theme">Theme</button>
+    <nav class="tabs" role="tablist" aria-label="Sections">
+      <button class="tab" role="tab" aria-selected="true" data-panel="guide">Study Guide</button>
+      <button class="tab" role="tab" aria-selected="false" data-panel="concepts">Concept Sheet</button>
+      <button class="tab" role="tab" aria-selected="false" data-panel="cards">Flashcards</button>
+    </nav>
+  </div>
+</header>
+
+<div class="toolbar" id="tb-guide">
+  <div class="tool-in">
+    <div class="seg" role="group" aria-label="Filter by test">
+      <button data-test="all" aria-pressed="true">All</button>
+      <button data-test="1" aria-pressed="false">Test 1</button>
+      <button data-test="2" aria-pressed="false">Test 2</button>
+    </div>
+    <div class="seg" role="group" aria-label="Answers">
+      <button id="toggleAns" aria-pressed="true">Answers shown</button>
+      <button id="onlyMissed" aria-pressed="false">Missed only</button>
+    </div>
+    <input class="search" id="qsearch" type="search" placeholder="Search questions — e.g. relay, arc flash, NAND">
+    <span class="count" id="qcount"></span>
+  </div>
+</div>
+
+<div class="toolbar" id="tb-cards" hidden>
+  <div class="tool-in">
+    <div class="deckbar" id="deckfilter" style="margin:0"></div>
+    <span class="count" id="deckcount"></span>
+  </div>
+</div>
+
+<main>
+  <section class="panel" id="panel-guide" role="tabpanel"><div id="qlist"></div></section>
+
+  <section class="panel" id="panel-concepts" role="tabpanel" hidden>
+    <p class="lede">The short version of everything the two tests actually tested. Each block is one idea,
+      the distinction the test hangs on, and a picture where a picture helps.</p>
+    <div class="concepts" id="concepts"></div>
+  </section>
+
+  <section class="panel" id="panel-cards" role="tabpanel" hidden>
+    <div class="stage">
+      <button class="card3d" id="card3d" aria-live="polite">
+        <div class="face front">
+          <span class="cat" id="fcat"></span><span class="side">Front</span>
+          <div class="q" id="fq"></div>
+          <span class="hint">Click or press Space to flip</span>
+        </div>
+        <div class="face back">
+          <span class="cat" id="bcat"></span><span class="side">Back</span>
+          <div class="a" id="fa"></div>
+          <span class="hint">← → to move · S to shuffle</span>
+        </div>
+      </button>
+    </div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="deckctl">
+      <button id="prev">← Prev</button>
+      <span class="progress" id="prog"></span>
+      <button id="next">Next →</button>
+      <button id="shuffle">Shuffle</button>
+    </div>
+  </section>
+</main>
+
+<footer>Built from the two graded test PDFs. Test 2's export is cut off inside Q39 — its options and Q40
+  are not in the file.</footer>
+
+<script>
+/* ============================ QUESTION BANK ============================ */
+const Q = [
+/* ---------------- TEST 1 ---------------- */
+{t:1,n:1,ty:"Multiple choice",q:"OSHA",o:["provides monetary health benefits to retired workers.","is the industrial equivalent of the Environmental Protection Agency.","is an agency of the U.S. Department of Health and Human Services.","sets safety standards for the workplace and conducts inspection tours to ensure compliance."],a:3,w:"OSHA sits under the Department of Labor, not Health and Human Services. It writes workplace safety standards and inspects for compliance."},
+{t:1,n:2,ty:"Multiple choice",q:"Appropriate attire for a job site could include:",o:["A hard hat","Safety shoes","Safety goggles","All of these"],a:3,w:"PPE is layered — head, feet and eyes are all protected on a typical industrial site."},
+{t:1,n:3,ty:"Multiple choice",q:"A __________ space is one that has a restrictive entrance or exit by way of location, size or means.",o:["confined","constricted","safe","restricted"],a:0,w:"Confined space: big enough to enter and work in, limited entry/exit, not designed for continuous occupancy."},
+{t:1,n:4,ty:"True / False",q:"Lockout/tagout devices applied by one employee can be removed by another employee.",o:["True","False"],a:1,w:"One lock, one key, one person. Only the worker who applied the device removes it — that is the entire point of LOTO."},
+{t:1,n:5,ty:"Multiple choice",q:"Electrical __________ is the process of placing a danger tag on the source of electrical power, which indicates that the equipment may not be operated until the danger tag is removed.",o:["tagout","lockout","remediation","certification"],a:0,w:"Tag = the warning. Lock = the physical block. The word 'tag' in the question gives it away."},
+{t:1,n:6,ty:"True / False",q:"A relatively small percentage of workplace accidents are associated with arc flash.",o:["True","False"],a:1,w:"Arc flash accounts for a large share of electrical workplace injuries, not a small one."},
+{t:1,n:7,ty:"Multiple choice",q:"When a current is still applied to an unconscious victim of electrocution, your priority is to __________",o:["turn off the power or separate the victim from the current","locate a telephone to call 911","administer artificial respiration","loosen any tight portions of clothing"],a:0,w:"Never touch an energized victim. Kill the power first or you become victim number two."},
+{t:1,n:8,ty:"Multiple choice",q:"Safety light curtains create a curtain of photoelectric light beams between a(n) __________ and a __________.",o:["emitter, receiver","source, sink","positive, negative","positive, negative"],a:0,w:"Same emitter/receiver pair as a through-beam photoelectric sensor, just stacked into a grid."},
+{t:1,n:9,ty:"Multiple choice",q:"Generally, any voltage above __________ volts is considered dangerous.",o:["6","30","12","120"],a:1,w:"30 V is the common industrial danger threshold — above that, skin resistance can be overcome."},
+{t:1,n:10,ty:"True / False",q:"Arc burns are a result of the extremely high temperature caused by an electric arc in close proximity to the body.",o:["True","False"],a:0,w:"An arc can reach roughly 35,000 °F — hotter than the surface of the sun. Contact is not required to be burned."},
+{t:1,n:11,ty:"True / False",q:"An electric shock with a current of 100 mA is rarely fatal.",o:["True","False"],a:1,w:"100 mA through the chest causes ventricular fibrillation and is frequently fatal. It is current, not voltage, that kills."},
+{t:1,n:12,ty:"Multiple choice",q:"The circuits on most motor control schematics can be broken down into being part of the __________ circuit or the __________ circuit.",o:["power, control","series, parallel","single phase, three phase","series, control"],a:0,w:"Power circuit = the high-current path to the motor (heavy lines). Control circuit = the low-current logic (light lines)."},
+{t:1,n:13,ty:"True / False",q:"When more than one electrical load is connected in a rung of a ladder diagram, the loads are normally connected in series.",o:["True","False"],a:1,w:"Loads go in parallel so each gets full L1–L2 voltage. Series loads would split the voltage and neither would operate correctly."},
+{t:1,n:14,ty:"True / False",q:"Symbols for electrical devices may not always resemble the real thing.",o:["True","False"],a:0,w:"Schematic symbols show function and connection, not physical appearance."},
+{t:1,n:15,ty:"Multiple choice",q:"To differentiate between NO and NC contacts on a ladder diagram, NC contacts are identified as a number which is",o:["in bold print form.","underlined.","in italic form.","all of these"],a:1,w:"An underlined contact reference number marks a normally closed contact."},
+{t:1,n:16,ty:"Multiple choice",q:"On a ladder diagram, all wires that connect to a common point are assigned __________.",o:["the same numbers","letters","different numbers","Roman Numerals"],a:0,w:"Wire numbering follows electrical nodes: every conductor landing on the same point carries the same number."},
+{t:1,n:17,ty:"Multiple choice",q:"The abbreviation most used for a pushbutton switch is ________.",o:["PB","P","S","BUT"],a:0,w:"PB1, PB2 … the standard device designation for pushbuttons."},
+{t:1,n:18,ty:"True / False",q:"The conductors feeding current to a large motor would be part of the control circuit.",o:["True","False"],a:1,w:"Motor feeders carry load current, so they belong to the power circuit."},
+{t:1,n:19,ty:"Multiple choice",q:"Additional START or ON control devices are wired",o:["in series","to relays","in parallel","to ground"],a:2,w:"Extra STARTs go in parallel (any one can start it). Extra STOPs go in series (any one can stop it)."},
+{t:1,n:20,ty:"Multiple choice",q:"The __________ is the electrical device in a ladder diagram that uses the power supplied from L1 to L2.",o:["load","switch","contacts","fuse"],a:0,w:"The load — coil, light, solenoid, motor — is the power-consuming device and always sits at the L2 end of the rung."},
+{t:1,n:21,ty:"Multiple choice",q:"Ladder diagrams show",o:["the physical location of components.","pictorial representation of components.","the electrical connections.","all of these"],a:2,w:"Ladder = electrical logic. If you need physical placement, that's a wiring or layout diagram."},
+{t:1,n:22,ty:"True / False",q:"An N.C. (normally closed) pushbutton makes a circuit when it is pressed and returns to its open position when the button is released.",o:["True","False"],a:1,w:"That describes an N.O. button. An N.C. button breaks the circuit when pressed and re-closes on release."},
+{t:1,n:23,ty:"True / False",q:"A pushbutton assembly can have multiple sets of contacts.",o:["True","False"],a:0,w:"One operator can drive stacked contact blocks — several NO and NC sets at once."},
+{t:1,n:24,ty:"Multiple choice",q:"Which of the following would be classified as a mechanically operated switch?",o:["Joystick controller","Limit switch","Drum switch","Pushbutton switch"],a:1,w:"A limit switch is thrown by a moving machine part. The others are operated by a human hand."},
+{t:1,n:25,ty:"Multiple choice",q:"Which of the following would not be classified as an actuator?",o:["Tachometer","Solenoid","Relay","Motor"],a:0,w:"A tachometer measures speed — that's an input device. Actuators output motion or switching."},
+{t:1,n:26,ty:"Multiple choice",q:"__________ use light to detect the presence or absence of an object.",o:["Generators","Proximity sensors","Limit switches","Photoelectric sensors"],a:3,w:"Photoelectric = light. Inductive/capacitive proximity sensors use fields, not light."},
+{t:1,n:27,ty:"True / False",q:"Mushroom head pushbutton operators are used for emergency stop pushbuttons.",o:["True","False"],a:0,w:"Large red mushroom head, easy to hit with a palm or elbow, usually maintained until twisted to release."},
+{t:1,n:28,ty:"Multiple choice",q:"A float switch is used to sense the ____________ of a liquid.",o:["density","flowrate","temperature","height"],a:3,w:"A float rides on the surface, so it reports level (height)."},
+{t:1,n:29,ty:"Multiple choice",q:"The type of switch shown is a",o:["SPST","DPST","SPDT","DPDT"],a:2,img:"spdt",w:"One common terminal (single pole) that can be thrown to either of two outputs (double throw)."},
+{t:1,n:30,ty:"True / False",q:"An inductive proximity sensor can be actuated by nonconductive materials.",o:["True","False"],a:1,w:"Inductive sensors only detect metal. For plastic, wood, glass or liquid you need a capacitive sensor."},
+{t:1,n:31,ty:"Multiple choice",q:"Solenoid valves are available to control ________ flow",o:["hydraulic","water","pneumatic","All of these"],a:3,w:"Same solenoid principle, different valve body — air, water or oil."},
+{t:1,n:32,ty:"Multiple choice",q:"The _______ pushbutton makes a circuit when it is pressed and returns to the open position when the button is released.",o:["N.C.","Break-Make","N.O.","Make-Break"],a:2,w:"Normally open: open at rest, closed while held. The mirror image of question 22."},
+{t:1,n:33,ty:"Truth table",q:"Complete the truth table for a two-input OR gate.",tt:["0","1","1","1"],w:"OR outputs 1 if any input is 1. Only 0+0 gives 0."},
+{t:1,n:34,ty:"Multiple choice",q:"Which symbol is an OR gate?",o:["symbol A","symbol B","symbol C","symbol D","symbol E"],a:0,img:"gates",w:"Curved back, pointed nose, no bubble. Symbol A on the exam sheet."},
+{t:1,n:35,ty:"Truth table",q:"Complete the truth table for a two-input X-OR gate.",tt:["0","1","1","0"],w:"Exclusive OR: output 1 only when the inputs differ."},
+{t:1,n:36,ty:"Multiple choice",q:"Which symbol is an X-OR gate?",o:["symbol A","symbol B","symbol C","symbol D","symbol E"],a:1,img:"gates",w:"OR shape with a second curved line across the back. Symbol B."},
+{t:1,n:37,ty:"Multiple choice",q:"Which symbol is a NAND gate?",o:["symbol A","symbol B","symbol C","symbol D","symbol E"],a:4,img:"gates",w:"Flat-backed AND shape with an inverting bubble on the nose. Symbol E."},
+{t:1,n:38,ty:"Multiple choice",q:"Which symbol is a NOR gate?",o:["symbol A","symbol B","symbol C","symbol D","symbol E"],a:2,img:"gates",w:"OR shape with an inverting bubble on the nose. Symbol C."},
+{t:1,n:39,ty:"Truth table",q:"Complete the truth table for a two-input AND gate.",tt:["0","0","0","1"],w:"AND outputs 1 only when both inputs are 1."},
+{t:1,n:40,ty:"Truth table",q:"Complete the truth table for a two-input NOR gate.",tt:["1","0","0","0"],w:"NOR is OR inverted — 1 only when both inputs are 0."},
+{t:1,n:41,ty:"Truth table",q:"Complete the truth table for a two-input NAND gate.",tt:["1","1","1","0"],w:"NAND is AND inverted — 0 only when both inputs are 1."},
+{t:1,n:42,ty:"Multiple choice",q:"Which symbol is an AND gate?",o:["symbol A","symbol B","symbol C","symbol D","symbol E"],a:3,img:"gates",w:"Flat back, D-shaped front, no bubble. Symbol D."},
+{t:1,n:43,ty:"Fill in the blank",q:"The rung shown (two normally closed limit-switch contacts wired in series) is a(n) ______ gate.",fill:"NOR",img:"nor-rung",w:"Two NC contacts in series: the output is on only when neither input is actuated. That is NOR."},
+{t:1,n:44,ty:"Fill in the blank",q:"The rung shown (contacts wired in parallel) is a(n) ______ gate.",fill:"OR",img:"or-rung",w:"Parallel NO contacts: any one of them closing energizes the load. That is OR."},
+
+/* ---------------- TEST 2 ---------------- */
+{t:2,n:1,ty:"Multiple choice",miss:1,q:"Which of the following is NOT a solid-state relay (SSR) switching method?",o:["zero switching","Instant-on switching","peak switching","Phase-angle switching"],a:3,w:"The four textbook SSR switching methods are zero, instant-on, peak and analog switching. Phase-angle is the odd one out. Marked wrong on the test — 'peak switching' was chosen."},
+{t:2,n:2,ty:"Multiple choice",q:"What do the heavy lines in a circuit drawing indicate?",o:["control circuit","no voltage","relay coil","power circuit"],a:3,w:"Heavy/bold lines = power circuit. Light lines = control circuit."},
+{t:2,n:3,ty:"Multiple choice",q:"Which device is this? (three-pole symbol: contacts above, thermal overload elements below)",o:["Circuit breaker","Motor starter","Disconnect","Pilot Light"],a:1,img:"starter",w:"A motor starter is a contactor plus an overload relay — hence contacts stacked over overload heaters."},
+{t:2,n:4,ty:"Multiple choice",q:"Which type of photoelectric sensor has a separate emitter and receiver unit?",o:["Retroreflective","Through beam","Diffuse","None of the above"],a:1,w:"Through-beam splits the pair across the gap. Retroreflective and diffuse put both in one housing."},
+{t:2,n:5,ty:"Multiple choice",q:"_________ represents the major functional parts of complex electrical/electronic systems by blocks rather than symbols.",o:["Wiring Diagrams","Riser Diagrams","Single Line Diagrams","Block Diagrams"],a:3,w:"Block diagram = boxes and arrows showing function, no component symbols."},
+{t:2,n:6,ty:"Multiple choice",q:"Which device is this? (two coils drawn face to face)",o:["Circuit breaker","Motor starter","Fuse","Transformer"],a:3,img:"xfmr",w:"Two windings sharing a core is the transformer symbol."},
+{t:2,n:7,ty:"Multiple choice",miss:1,q:"Which device is this? (a plain circle in the rung)",o:["Coil","Push Button","Limit Switch","Float Switch"],a:0,img:"coil",w:"A bare circle at the L2 end of a rung is a coil. Marked wrong on the test — 'float switch' was chosen."},
+{t:2,n:8,ty:"Multiple choice",q:"What is an inductive proximity sensor?",o:["A proximity sensor that consists of a sensor plate, an oscillator, a trigger circuit, and an output switching circuit","The physical housing of a sensor","A sensor that uses visible light and infrared","A proximity sensor that consists of a sensor coil, an oscillator, a trigger circuit, and an output switching circuit"],a:3,w:"Coil, not plate. A sensor plate belongs to the capacitive version — that is the whole trick of this question."},
+{t:2,n:9,ty:"Multiple choice",q:"What wire number would this wire have? (arrow points at the L1 side of rung 3)",o:["1","2","6","7"],a:0,img:"wirenum",w:"Everything electrically common to the L1 rail is wire 1, no matter which rung it is on."},
+{t:2,n:10,ty:"Multiple choice",q:"This is an example of a __________. (supply, disconnects, overcurrent protection and motor drawn as one vertical run)",o:["Wiring Diagrams","Riser Diagrams","Single Line Diagrams","Block Diagrams"],a:2,img:"single-line",w:"A single-line (one-line) diagram shows the whole distribution path as a single conductor with symbols."},
+{t:2,n:11,ty:"Fill in the blank",q:"The part of the control relay that gets energized by \"A1\" and \"A2\" is the ______.",fill:"coil",w:"A1 and A2 are the standard IEC coil terminal markings."},
+{t:2,n:12,ty:"Multiple choice",q:"What is wrong with this circuit?",o:["Solenoids and control relays cannot be used in the same circuit","Load devices should be in series","A rung is missing a load","The solenoid has a red square around it"],a:2,img:"missing-load",w:"The bottom rung runs PS1 straight from L1 to L2 with nothing to consume the power — a dead short."},
+{t:2,n:13,ty:"Multiple choice",q:"What is the purpose of an interposing relay?",o:["It allows a low-power control signal to switch a higher-power circuit","It increases the voltage supplied to a motor by directly connecting the motor to the control circuit.","It protects a relay coil from overheating by reducing the current flow.","It converts an AC signal into a DC signal for use in control circuits."],a:0,w:"It sits between a weak output (a PLC card, say) and a load that output cannot drive."},
+{t:2,n:14,ty:"True / False",q:"A throw is the number of closed contact positions per pole.",o:["True","False"],a:0,w:"Poles = how many separate circuits switched. Throws = how many positions each pole can close into."},
+{t:2,n:15,ty:"Truth table",q:"Complete the truth table for a two-input AND gate.",tt:["0","0","0","1"],w:"Both inputs high, or nothing."},
+{t:2,n:16,ty:"Multiple choice",q:"Which symbol is an X-OR gate?",o:["symbol A","symbol B","symbol C","symbol D","symbol E"],a:1,img:"gates",w:"Double curved back, no bubble. Symbol B — same sheet as Test 1."},
+{t:2,n:17,ty:"Multiple choice",q:"How does this circuit work?",o:["If you press PB1, and do not energize PB2 or LS1, the green light will turn off and the motor starter will energize.","If you press PB1, and do not energize PB2 or LS1, the red light will turn off and the motor starter will deenergize.","If you press PB1, and do not energize PB2 or LS1, the red light will turn off and the motor starter will energize.","If you press PB1, and do not energize PB2 or LS1, the red light will turn on and the motor starter will deenergize."],a:2,img:"cr1",w:"CR1 picks up and seals in through CR1-1. CR1-2 is NC, so the red STOP light drops out; CR1-3 and CR1-4 are NO, so the green RUN light and motor starter M pick up."},
+{t:2,n:18,ty:"Multiple choice",q:"Which device is this? (two coils drawn face to face)",o:["Circuit breaker","Motor starter","Fuse","Transformer"],a:3,img:"xfmr",w:"Same transformer symbol as question 6."},
+{t:2,n:19,ty:"Multiple choice",q:"Which symbol is an OR gate?",o:["symbol A","symbol B","symbol C","symbol D","symbol E"],a:0,img:"gates",w:"Single curved back, pointed nose, no bubble. Symbol A."},
+{t:2,n:20,ty:"Matching",miss:1,q:"Match the part to the photo.",match:[["1","PLC — modular rack with CPU and I/O cards"],["2","HMI / operator drive unit with keypad and display"],["3","Motor Starter — contactor with overload block"],["4","Disconnect — enclosed switch with external handle"],["5","Terminal Block — DIN-rail strips of numbered terminals"],["6","Transformer — laminated core, primary and secondary leads"],["7","Industrial Networking Switch — DIN-rail Ethernet ports"],["8","Circuit Breaker — DIN-rail poles with trip levers"]],w:"Scored 0.87 — seven of eight matched. Learn these by silhouette: card rack = PLC, screen = HMI, DIN-rail rows = terminal block, iron core = transformer."},
+{t:2,n:21,ty:"Multiple choice",miss:1,q:"Which device is this? (three ganged open knife-blade switches)",o:["Circuit breaker","Motor starter","Disconnect","Pilot Light"],a:2,img:"disc",w:"Three ganged blades that simply open the circuit and nothing else = disconnect. A breaker symbol adds a trip element. Marked wrong on the test — 'circuit breaker' was chosen."},
+{t:2,n:22,ty:"Truth table",q:"Complete the truth table for a two-input OR gate.",tt:["0","1","1","1"],w:"Any input high gives a high output."},
+{t:2,n:23,ty:"Multiple choice",q:"How many circuits are involved with the operation of a magnetic contactor?",o:["2","3","unlimited","none"],a:0,w:"Two: the power circuit through the main contacts and the control circuit through the coil."},
+{t:2,n:24,ty:"True / False",q:"Normally closed contacts are contacts that are closed when the coil is de-energized and open when the coil is energized.",o:["True","False"],a:0,w:"'Normally' always means the de-energized, at-rest state."},
+{t:2,n:25,ty:"Multiple choice",q:"The two circuits involved with the operation of a magnetic contactor are the",o:["power and control circuits","input and output circuits","primary and secondary circuits","series and parallel circuits"],a:0,w:"The paired answer to question 23."},
+{t:2,n:26,ty:"True / False",q:"Control logic functions describe how inputs interact with each other to control the outputs.",o:["True","False"],a:0,w:"That is exactly what AND / OR / NOT logic in a rung is doing."},
+{t:2,n:27,ty:"True / False",q:"An electromechanical relay will usually have only one coil but may have any number of different contacts.",o:["True","False"],a:0,w:"One coil, one armature, as many stacked contact sets as the frame allows."},
+{t:2,n:28,ty:"Multiple choice",q:"An electromechanical relay is basically",o:["an electromagnet used to switch contacts","an electronic circuit used to control motors","an electromagnet used to operate motors","a device designed to relay information"],a:0,w:"Coil makes a magnetic field, field pulls an armature, armature moves contacts. That's the whole device."},
+{t:2,n:29,ty:"True / False",q:"Control relays are used to switch large motor loads.",o:["True","False"],a:1,w:"Control relays switch small pilot-duty loads. Motor loads need a contactor or motor starter."},
+{t:2,n:30,ty:"True / False",q:"The SCR, like a contact, is in either the ON state (closed contact) or the OFF state (open contact).",o:["True","False"],a:0,w:"An SCR is a latching solid-state switch — fully on or fully off, no in-between."},
+{t:2,n:31,ty:"Multiple choice",q:"Which type of main switching semiconductor is commonly used in a solid-state relay (SSR) to control AC loads?",o:["Transistor","MOSFET","Triac","diode"],a:2,w:"A triac conducts in both directions, so it handles both halves of the AC waveform. Transistors and MOSFETs are the DC answer."},
+{t:2,n:32,ty:"Multiple choice",q:"Which of the following are types of current ratings that may be specified for relay contacts?",o:["Inrush (make) contact capacity, normal continuous carrying capacity, and opening (break) capacity","Coil resistance, pickup voltage, and dropout voltage.","Operating temperature, coil shape, and terminal spacing.","Contact color, mounting style, and relay size."],a:0,w:"Contacts are rated for three moments: closing into inrush, carrying continuously, and breaking the arc."},
+{t:2,n:33,ty:"Multiple choice",q:"What factors are used to rate a relay coil?",o:["The contact material, contact color, and mounting location only.","Type of operating current (AC or DC), operating voltage/current, permissible coil voltage variation, resistance, and power rating.","Only the number of contacts and the physical size of the relay.","The load current and voltage connected to the relay contacts only."],a:1,w:"Coil ratings are all about the coil itself — never about the load on the contacts."},
+{t:2,n:34,ty:"Multiple choice",miss:1,q:"How many breaks can a relay contact have?",o:["3-4","none","One or two","unlimited"],a:2,w:"Single-break opens the circuit at one point; double-break opens it at two, which kills the arc faster. Marked wrong on the test — 'none' was chosen."},
+{t:2,n:35,ty:"Multiple choice",q:"What is the purpose of an overload protection device in a motor control circuit?",o:["To protect the motor from high voltage spikes caused by lightning strikes.","To provide manual control for starting and stopping a motor.","To increase the speed and torque output of a motor.","To protect motors, motor control equipment, and motor-branch circuit conductors from excessive heating caused by overloads and failure to start."],a:3,w:"Overloads watch heat over time. Short circuits are the fuse's and breaker's job."},
+{t:2,n:36,ty:"Multiple choice",q:"What is the fundamental difference between an electromechanical and a solid-state relay?",o:["An electromechanical relay uses moving contacts, while a solid-state relay has no moving parts.","An electromechanical relay operates only on AC power, while a solid-state relay operates only on DC power.","An electromechanical relay is faster because it has no moving parts","There is no difference between an electromechanical relay and a solid-state relay."],a:0,w:"Moving contacts versus semiconductors. Everything else — speed, life, silence — follows from that."},
+{t:2,n:37,ty:"Multiple choice",q:"How are contactors typically used in electrical control systems?",o:["Contactors are used with pilot devices to automatically control high-current loads.","Contactors are used only to measure voltage and current in a circuit.","Contactors are used to reduce the amount of current used by a motor.","Contactors are used only in low-voltage electronic circuits."],a:0,w:"A small pilot device (button, switch, sensor) energizes the coil; the contacts carry the big current."},
+{t:2,n:38,ty:"Multiple choice",q:"What happens when an AC motor is first energized?",o:["A high inrush current occurs, which can be approximately 20 times the normal full-load current","The motor immediately draws less current than its normal operating current.","The motor automatically reduces the supply voltage to prevent current flow.","The motor produces no current until it reaches full speed."],a:0,w:"Locked-rotor inrush is roughly 20× FLC. It is why overload relays are time-delayed instead of instantaneous."},
+{t:2,n:39,ty:"Multiple choice",trunc:1,q:"What is a magnetic motor starter made of?",o:["A push button and a pilot light connected in series."],w:"The exported PDF is cut off here — only option A survived and Q40 is missing entirely. The textbook answer: a magnetic contactor with an overload relay attached."}
+];
+
+/* ============================ FLASHCARDS ============================ */
+const CARDS = [
+["Safety","What does OSHA do?","Sets and enforces workplace safety standards, and conducts inspection tours to check compliance. It is part of the Department of Labor."],
+["Safety","Define a confined space.","A space with a restrictive entrance or exit by way of location, size or means — large enough to work in, but not designed for continuous occupancy."],
+["Safety","Lockout vs. tagout","Lockout physically blocks the energy source with a lock. Tagout hangs a danger tag saying the equipment may not be operated until the tag is removed."],
+["Safety","Who may remove a lockout/tagout device?","Only the employee who applied it. Never another worker."],
+["Safety","Voltage generally considered dangerous","Anything above 30 volts."],
+["Safety","Is 100 mA of shock current survivable?","Rarely. Around 100 mA through the chest causes ventricular fibrillation. Current is what kills, not voltage."],
+["Safety","What causes an arc burn?","The extremely high temperature of an electric arc near the body — no contact required. Arcs reach roughly 35,000 °F."],
+["Safety","Arc flash and workplace accidents","Arc flash is responsible for a large share of electrical workplace injuries, not a small one."],
+["Safety","First action for an unconscious electrocution victim still in contact with current","Turn off the power or separate the victim from the current. Only then call for help and give first aid."],
+["Safety","How does a safety light curtain work?","An emitter projects a grid of photoelectric beams to a receiver. Breaking any beam stops the machine."],
+["Safety","Typical job-site PPE","Hard hat, safety shoes and safety goggles — head, feet and eyes."],
+["Safety","What is a mushroom head pushbutton used for?","Emergency stop. The wide head can be struck with a palm or elbow."],
+
+["Diagrams","Power circuit vs. control circuit","Power circuit carries load current to the motor and is drawn with heavy lines. Control circuit carries the low-current logic and is drawn with light lines."],
+["Diagrams","What do heavy lines in a circuit drawing mean?","Power circuit."],
+["Diagrams","What does a ladder diagram show?","The electrical connections — the logic. Not physical location and not pictorial appearance."],
+["Diagrams","What is the load in a rung?","The device that uses the power supplied from L1 to L2 — coil, pilot light, solenoid or motor. It sits at the L2 end."],
+["Diagrams","How are multiple loads in one rung connected?","In parallel, so each receives full L1–L2 voltage."],
+["Diagrams","How are extra START buttons wired?","In parallel — any one of them can start the circuit."],
+["Diagrams","How are extra STOP buttons wired?","In series — any one of them can stop the circuit."],
+["Diagrams","Wire-numbering rule","Every wire connected to the same electrical point gets the same number."],
+["Diagrams","How is an NC contact marked on a ladder diagram?","Its reference number is underlined."],
+["Diagrams","Standard abbreviation for a pushbutton","PB"],
+["Diagrams","Do schematic symbols look like the real device?","Not necessarily. Symbols convey function and connection, not appearance."],
+["Diagrams","Block diagram","Shows the major functional parts of a complex system as blocks rather than component symbols."],
+["Diagrams","Single-line (one-line) diagram","Shows the whole distribution path — supply, disconnects, overcurrent protection, starter, motor — drawn as one conductor with symbols."],
+["Diagrams","Wiring diagram","Shows the actual physical wiring and terminal connections of the components."],
+["Diagrams","What's wrong with a rung that has only a switch between L1 and L2?","It's missing a load. With nothing to consume power, closing the switch is a short circuit."],
+["Diagrams","Symbol: plain circle in a rung","A coil."],
+["Diagrams","Symbol: two coils drawn face to face","A transformer."],
+["Diagrams","Symbol: three ganged open knife blades","A disconnect."],
+["Diagrams","Symbol: three sets of contacts over thermal elements","A motor starter — contactor plus overload relay."],
+["Diagrams","Which relay terminals are the coil?","A1 and A2."],
+
+["Switches","Pole vs. throw vs. break","Pole = number of separate circuits the switch controls. Throw = number of closed contact positions per pole. Break = number of places a contact opens the circuit."],
+["Switches","How many breaks can a relay contact have?","One or two. Double-break opens the circuit in two places and extinguishes the arc faster."],
+["Switches","SPST","Single pole, single throw — one circuit, simple on/off."],
+["Switches","SPDT","Single pole, double throw — one common terminal that can be thrown to either of two outputs."],
+["Switches","DPST","Double pole, single throw — two circuits switched on and off together."],
+["Switches","DPDT","Double pole, double throw — two circuits each thrown between two outputs."],
+["Switches","N.O. pushbutton behavior","Open at rest. Pressing makes the circuit; releasing returns it to open."],
+["Switches","N.C. pushbutton behavior","Closed at rest. Pressing breaks the circuit; releasing returns it to closed."],
+["Switches","What does \"normally\" mean in NO/NC?","The de-energized, unactuated, at-rest state of the device."],
+["Switches","Can one pushbutton assembly have several contacts?","Yes — one operator can drive multiple stacked NO and NC contact blocks."],
+["Switches","Which common switch is mechanically operated?","The limit switch — it is actuated by a moving machine part, not by a person."],
+
+["Sensors","Which sensor uses light to detect presence or absence?","A photoelectric sensor."],
+["Sensors","Through-beam photoelectric sensor","Emitter and receiver are separate units facing each other. The object breaks the beam. Longest range, most reliable."],
+["Sensors","Retroreflective photoelectric sensor","Emitter and receiver in one housing, aimed at a reflector. The object breaks the returning beam."],
+["Sensors","Diffuse photoelectric sensor","Emitter and receiver in one housing; detection relies on light bouncing off the object itself. Shortest range."],
+["Sensors","What is an inductive proximity sensor made of?","A sensor coil, an oscillator, a trigger circuit and an output switching circuit."],
+["Sensors","What is a capacitive proximity sensor made of?","A sensor plate (not a coil), an oscillator, a trigger circuit and an output switching circuit."],
+["Sensors","Can an inductive proximity sensor detect nonconductive material?","No. It detects metal only. Use a capacitive sensor for plastic, wood, glass or liquid."],
+["Sensors","What does a float switch sense?","The height — the level — of a liquid."],
+["Sensors","Sensor or actuator: tachometer","Sensor. It measures speed, so it is an input device — not an actuator."],
+["Sensors","Name three actuators","Solenoid, relay and motor. All produce motion or switching as an output."],
+["Sensors","What flows can a solenoid valve control?","Hydraulic, pneumatic and water — all of them."],
+
+["Relays","What is an electromechanical relay?","An electromagnet used to switch contacts. Energizing the coil pulls an armature that moves the contact sets."],
+["Relays","How many coils and contacts does an EMR have?","Usually one coil, but any number of different contacts."],
+["Relays","EMR vs. SSR — the fundamental difference","The electromechanical relay uses moving contacts; the solid-state relay has no moving parts."],
+["Relays","Which semiconductor does an SSR use to switch AC loads?","A triac — it conducts in both directions, so it handles both halves of the AC waveform."],
+["Relays","Name the SSR switching methods","Zero switching, instant-on switching, peak switching and analog switching. Phase-angle is not one of them."],
+["Relays","Is an SCR a linear or on/off device?","On/off. Like a contact, it is either fully ON (closed) or fully OFF (open)."],
+["Relays","What is an interposing relay for?","It lets a low-power control signal — a PLC output, for instance — switch a higher-power circuit."],
+["Relays","Can control relays switch large motor loads?","No. Control relays are pilot duty. Motor loads need a contactor or motor starter."],
+["Relays","Three current ratings for relay contacts","Inrush (make) capacity, normal continuous carrying capacity, and opening (break) capacity."],
+["Relays","What factors rate a relay coil?","Type of operating current (AC or DC), operating voltage and current, permissible coil voltage variation, resistance, and power rating."],
+["Relays","Behavior of a normally closed contact","Closed when the coil is de-energized; open when the coil is energized."],
+["Relays","How many circuits does a magnetic contactor involve?","Two — the power circuit through the main contacts and the control circuit through the coil."],
+["Relays","How are contactors typically used?","With pilot devices, to automatically control high-current loads."],
+["Relays","What is a magnetic motor starter?","A magnetic contactor with an overload relay attached."],
+["Relays","Purpose of an overload protection device","To protect motors, motor control equipment and motor-branch circuit conductors from excessive heating caused by overloads and failure to start."],
+["Relays","What happens when an AC motor is first energized?","A high inrush current occurs — roughly 20 times normal full-load current."],
+["Relays","How does a seal-in (holding) contact work?","An NO auxiliary contact of the relay is wired parallel to the START button, so the coil stays energized after the button is released."],
+
+["Logic","AND gate truth table","0·0=0, 0·1=0, 1·0=0, 1·1=1. Output is high only when both inputs are high."],
+["Logic","OR gate truth table","0+0=0, 0+1=1, 1+0=1, 1+1=1. Output is high if any input is high."],
+["Logic","NAND gate truth table","1, 1, 1, 0. AND inverted — output is low only when both inputs are high."],
+["Logic","NOR gate truth table","1, 0, 0, 0. OR inverted — output is high only when both inputs are low."],
+["Logic","X-OR gate truth table","0, 1, 1, 0. Output is high only when the inputs are different."],
+["Logic","How do you recognize an AND symbol?","Flat back and a D-shaped front, with no bubble."],
+["Logic","How do you recognize an OR symbol?","Curved back and a pointed nose, with no bubble."],
+["Logic","How do you recognize an X-OR symbol?","OR shape with a second curved line across the back."],
+["Logic","What does a bubble on the nose of a gate mean?","Inversion. AND + bubble = NAND, OR + bubble = NOR."],
+["Logic","Contact equivalent of an AND gate","Two normally open contacts in series."],
+["Logic","Contact equivalent of an OR gate","Two normally open contacts in parallel."],
+["Logic","Contact equivalent of a NOR gate","Two normally closed contacts in series."],
+["Logic","Contact equivalent of a NAND gate","Two normally closed contacts in parallel."],
+["Logic","Contact equivalent of a NOT gate","A single normally closed contact."],
+["Logic","What do control logic functions describe?","How inputs interact with each other to control the outputs."],
+
+["Panel ID","PLC — how do you spot it?","A modular rack: power supply and CPU on the left, plug-in I/O cards beside it, terminal strips on each card."],
+["Panel ID","HMI — how do you spot it?","A display and keypad — the operator interface for reading status and entering commands."],
+["Panel ID","Terminal block — how do you spot it?","Rows of small numbered terminals clipped side by side on DIN rail, often color coded."],
+["Panel ID","Control transformer — how do you spot it?","A laminated iron core wrapped in windings, with primary and secondary leads. Steps control voltage down."],
+["Panel ID","Industrial networking switch — how do you spot it?","A DIN-rail box with a row of RJ45 Ethernet ports and link LEDs."],
+["Panel ID","Circuit breaker — how do you spot it?","Modular DIN-rail poles with trip levers. It both switches and protects, and can be reset."],
+["Panel ID","Disconnect — how do you spot it?","An enclosed switch with an external rotary or lever handle for locking out power to the panel."]
+];
+
+/* ============================ SVG FIGURES ============================ */
+const SVG = {
+gates:`<svg viewBox="0 0 560 90" role="img" aria-label="Five logic gate symbols labelled A through E">
+<g class="dg">
+<path d="M20 15 C32 33 32 47 20 65 C55 65 72 52 82 40 C72 28 55 15 20 15Z"/><path d="M0 27h22M0 53h22M83 40h22"/>
+<path d="M130 15 C142 33 142 47 130 65 C165 65 182 52 192 40 C182 28 165 15 130 15Z"/><path d="M122 15 C134 33 134 47 122 65"/><path d="M108 27h16M108 53h16M193 40h22"/>
+<path d="M240 15 C252 33 252 47 240 65 C275 65 292 52 302 40 C292 28 275 15 240 15Z"/><circle cx="308" cy="40" r="6"/><path d="M218 27h22M218 53h22M315 40h20"/>
+<path d="M350 15 H382 A25 25 0 0 1 382 65 H350 Z"/><path d="M328 27h22M328 53h22M408 40h22"/>
+<path d="M460 15 H492 A25 25 0 0 1 492 65 H460 Z"/><circle cx="524" cy="40" r="6"/><path d="M438 27h22M438 53h22M531 40h20"/>
+</g>
+<g class="lbl-k"><text x="46" y="86">A · OR</text><text x="152" y="86">B · X-OR</text><text x="258" y="86">C · NOR</text><text x="370" y="86">D · AND</text><text x="476" y="86">E · NAND</text></g></svg>`,
+
+spdt:`<svg class="sm" viewBox="0 0 220 90" role="img" aria-label="SPDT switch symbol">
+<g class="dg"><path d="M10 45h40"/><circle cx="56" cy="45" r="5"/><path d="M60 42 L118 24"/><circle cx="124" cy="22" r="5"/><circle cx="124" cy="62" r="5"/><path d="M130 22h60M130 62h60"/></g>
+<g class="lbl-s"><text x="34" y="72">common</text><text x="150" y="16">NC</text><text x="150" y="82">NO</text></g></svg>`,
+
+xfmr:`<svg class="sm" viewBox="0 0 200 90" role="img" aria-label="Transformer symbol">
+<g class="dg"><path d="M10 26h30M10 64h30"/>
+<path d="M40 26 a9 9 0 0 1 18 0 a9 9 0 0 1 18 0 a9 9 0 0 1 18 0"/>
+<path d="M40 64 a9 9 0 0 0 18 0 a9 9 0 0 0 18 0 a9 9 0 0 0 18 0"/>
+<path d="M94 26h30M94 64h30"/><path d="M66 34v22" stroke-dasharray="4 4"/><path d="M72 34v22" stroke-dasharray="4 4"/></g>
+<g class="lbl-s"><text x="132" y="30">H1/H2</text><text x="132" y="68">X1/X2</text></g></svg>`,
+
+coil:`<svg class="sm" viewBox="0 0 200 70" role="img" aria-label="Relay coil symbol in a rung">
+<g class="dg"><path d="M10 35h60"/><circle cx="95" cy="35" r="24"/><path d="M119 35h60"/></g>
+<text class="lbl-k" x="83" y="40">CR</text><text class="lbl-s" x="60" y="66">coil = load</text></svg>`,
+
+disc:`<svg class="sm" viewBox="0 0 200 100" role="img" aria-label="Three pole disconnect symbol">
+<g class="dg">
+<path d="M30 12v10M30 66v10M75 12v10M75 66v10M120 12v10M120 66v10"/>
+<circle cx="30" cy="26" r="4"/><circle cx="30" cy="62" r="4"/><path d="M31 58 L44 30"/>
+<circle cx="75" cy="26" r="4"/><circle cx="75" cy="62" r="4"/><path d="M76 58 L89 30"/>
+<circle cx="120" cy="26" r="4"/><circle cx="120" cy="62" r="4"/><path d="M121 58 L134 30"/>
+<path d="M44 30 L134 30" stroke-dasharray="5 5"/></g>
+<text class="lbl-s" x="20" y="94">3-pole disconnect — ganged blades, no trip element</text></svg>`,
+
+starter:`<svg class="sm" viewBox="0 0 220 130" role="img" aria-label="Motor starter symbol">
+<g class="dg">
+<path d="M25 10v14M25 44v18M70 10v14M70 44v18M115 10v14M115 44v18"/>
+<circle cx="25" cy="28" r="4"/><circle cx="25" cy="40" r="4"/><path d="M26 36 L39 16"/>
+<circle cx="70" cy="28" r="4"/><circle cx="70" cy="40" r="4"/><path d="M71 36 L84 16"/>
+<circle cx="115" cy="28" r="4"/><circle cx="115" cy="40" r="4"/><path d="M116 36 L129 16"/>
+<path d="M25 62 a9 9 0 0 1 0 18 a9 9 0 0 0 0 18 M25 98v14"/>
+<path d="M70 62 a9 9 0 0 1 0 18 a9 9 0 0 0 0 18 M70 98v14"/>
+<path d="M115 62 a9 9 0 0 1 0 18 a9 9 0 0 0 0 18 M115 98v14"/></g>
+<g class="lbl-s"><text x="145" y="34">main contacts</text><text x="145" y="84">overload heaters</text></g></svg>`,
+
+rung:`<svg viewBox="0 0 620 150" role="img" aria-label="Anatomy of a ladder rung">
+<g class="dg"><path d="M40 10v130M580 10v130"/>
+<path d="M40 55h60"/><circle cx="106" cy="55" r="4"/><circle cx="140" cy="55" r="4"/><path d="M104 44 L142 44"/>
+<path d="M146 55h60"/><circle cx="212" cy="55" r="4"/><circle cx="246" cy="55" r="4"/><path d="M212 44 L246 44"/><path d="M229 40v-8"/>
+<path d="M252 55h100"/><path d="M352 47v16M368 47v16"/><path d="M368 55h80"/>
+<circle cx="474" cy="55" r="24"/><path d="M498 55h82"/>
+<path d="M40 120h120"/><circle cx="166" cy="120" r="4"/><circle cx="200" cy="120" r="4"/><path d="M164 109 L202 109"/><path d="M164 131 L202 131" stroke-width="0"/><path d="M170 132 L196 106"/>
+<path d="M206 120h250"/><circle cx="482" cy="120" r="20"/><path d="M502 120h78"/></g>
+<g class="lbl-s"><text x="18" y="150">L1</text><text x="566" y="150">L2</text>
+<text x="100" y="80">NO contact</text><text x="206" y="80">START PB</text><text x="342" y="88">OL</text>
+<text x="446" y="26">load (coil)</text><text x="152" y="98">NC contact</text><text x="452" y="150">pilot light</text></g>
+<g class="lbl-k"><text x="460" y="60">M</text><text x="474" y="126">R</text></g></svg>`,
+
+logicrungs:`<svg viewBox="0 0 660 220" role="img" aria-label="Contact equivalents of AND OR NOR NAND gates">
+<g class="dg">
+<path d="M30 22h30"/><circle cx="66" cy="22" r="4"/><circle cx="96" cy="22" r="4"/><path d="M64 12h34"/><path d="M102 22h20"/><circle cx="128" cy="22" r="4"/><circle cx="158" cy="22" r="4"/><path d="M126 12h34"/><path d="M164 22h40"/><circle cx="220" cy="22" r="14"/><path d="M234 22h26"/>
+<path d="M30 88h26"/><path d="M56 68v40"/><circle cx="62" cy="68" r="4"/><circle cx="92" cy="68" r="4"/><path d="M60 58h34"/><circle cx="62" cy="108" r="4"/><circle cx="92" cy="108" r="4"/><path d="M60 98h34"/><path d="M98 68h66M98 108h66"/><path d="M164 68v40"/><path d="M164 88h40"/><circle cx="220" cy="88" r="14"/><path d="M234 88h26"/>
+<path d="M380 22h30"/><circle cx="416" cy="22" r="4"/><circle cx="446" cy="22" r="4"/><path d="M414 12h34"/><path d="M420 32 L444 8"/><path d="M452 22h20"/><circle cx="478" cy="22" r="4"/><circle cx="508" cy="22" r="4"/><path d="M476 12h34"/><path d="M482 32 L506 8"/><path d="M514 22h40"/><circle cx="570" cy="22" r="14"/><path d="M584 22h26"/>
+<path d="M380 88h26"/><path d="M406 68v40"/><circle cx="412" cy="68" r="4"/><circle cx="442" cy="68" r="4"/><path d="M410 58h34"/><path d="M416 78 L440 54"/><circle cx="412" cy="108" r="4"/><circle cx="442" cy="108" r="4"/><path d="M410 98h34"/><path d="M416 118 L440 94"/><path d="M448 68h66M448 108h66"/><path d="M514 68v40"/><path d="M514 88h40"/><circle cx="570" cy="88" r="14"/><path d="M584 88h26"/></g>
+<g class="lbl-k"><text x="30" y="52">AND — NO contacts in series</text><text x="30" y="140">OR — NO contacts in parallel</text>
+<text x="380" y="52">NOR — NC contacts in series</text><text x="380" y="140">NAND — NC contacts in parallel</text></g>
+<g class="lbl-s"><text x="30" y="180">Read a rung left to right: contacts are the inputs, the coil at the right is the output.</text>
+<text x="30" y="200">A slash through a contact means normally closed — it conducts until it is actuated.</text></g></svg>`,
+
+photo:`<svg viewBox="0 0 620 210" role="img" aria-label="Three photoelectric sensing modes">
+<g class="dg">
+<rect x="20" y="20" width="34" height="40" rx="3"/><rect x="200" y="20" width="34" height="40" rx="3"/>
+<path d="M54 40h146" class="dg-a" stroke-dasharray="7 5"/><rect x="112" y="12" width="26" height="56" rx="2"/>
+<rect x="20" y="95" width="34" height="40" rx="3"/><rect x="204" y="90" width="12" height="50" rx="2"/>
+<path d="M54 108h150M204 122H54" class="dg-a" stroke-dasharray="7 5"/><rect x="118" y="88" width="24" height="54" rx="2"/>
+<rect x="20" y="168" width="34" height="40" rx="3"/><rect x="150" y="160" width="26" height="56" rx="2"/>
+<path d="M54 180h96M150 196H54" class="dg-a" stroke-dasharray="7 5"/></g>
+<g class="lbl-k"><text x="266" y="34">Through beam</text><text x="266" y="110">Retroreflective</text><text x="266" y="184">Diffuse</text></g>
+<g class="lbl-s"><text x="266" y="52">Separate emitter and receiver. Longest range.</text>
+<text x="266" y="128">One housing, aimed at a reflector.</text>
+<text x="266" y="202">One housing; light bounces off the object itself.</text></g></svg>`,
+
+shock:`<svg viewBox="0 0 620 130" role="img" aria-label="Effect of shock current on the body">
+<g class="dg"><path d="M30 70h560"/><path d="M30 64v12M160 64v12M290 64v12M420 64v12M560 64v12"/></g>
+<g class="lbl-k"><text x="18" y="58">1 mA</text><text x="146" y="58">5 mA</text><text x="270" y="58">10–20 mA</text><text x="404" y="58">50 mA</text><text x="530" y="58">100 mA+</text></g>
+<g class="lbl-s"><text x="18" y="94">perception</text><text x="140" y="94">painful</text><text x="264" y="94">cannot let go</text><text x="398" y="94">severe pain,</text><text x="398" y="110">breathing</text><text x="516" y="94">ventricular</text><text x="516" y="110">fibrillation</text></g></svg>`,
+
+poles:`<svg viewBox="0 0 700 150" role="img" aria-label="SPST SPDT DPST DPDT switch symbols">
+<g class="dg">
+<path d="M20 40h26"/><circle cx="52" cy="40" r="4"/><circle cx="96" cy="40" r="4"/><path d="M54 36 L98 22"/><path d="M100 40h26"/>
+<path d="M180 40h26"/><circle cx="212" cy="40" r="4"/><circle cx="258" cy="26" r="4"/><circle cx="258" cy="54" r="4"/><path d="M214 36 L258 24"/><path d="M262 26h24M262 54h24"/>
+<path d="M340 26h26"/><circle cx="372" cy="26" r="4"/><circle cx="416" cy="26" r="4"/><path d="M374 22 L418 10"/><path d="M420 26h26"/>
+<path d="M340 62h26"/><circle cx="372" cy="62" r="4"/><circle cx="416" cy="62" r="4"/><path d="M374 58 L418 46"/><path d="M420 62h26"/>
+<path d="M396 14v34" stroke-dasharray="4 4"/>
+<path d="M500 26h20"/><circle cx="526" cy="26" r="4"/><circle cx="566" cy="16" r="4"/><circle cx="566" cy="38" r="4"/><path d="M528 22 L566 14"/><path d="M570 16h22M570 38h22"/>
+<path d="M500 76h20"/><circle cx="526" cy="76" r="4"/><circle cx="566" cy="66" r="4"/><circle cx="566" cy="88" r="4"/><path d="M528 72 L566 64"/><path d="M570 66h22M570 88h22"/>
+<path d="M547 20v52" stroke-dasharray="4 4"/></g>
+<g class="lbl-k"><text x="20" y="86">SPST</text><text x="180" y="86">SPDT</text><text x="340" y="112">DPST</text><text x="500" y="120">DPDT</text></g>
+<g class="lbl-s"><text x="20" y="106">1 circuit,</text><text x="20" y="122">on/off</text>
+<text x="180" y="106">1 circuit,</text><text x="180" y="122">2 destinations</text>
+<text x="340" y="132">2 circuits, ganged</text><text x="500" y="140">2 circuits, 2 ways each</text></g></svg>`,
+
+hierarchy:`<svg viewBox="0 0 700 178" role="img" aria-label="Control relay, contactor and motor starter compared">
+<g class="dg"><rect x="20" y="20" width="196" height="92" rx="4"/><rect x="252" y="20" width="196" height="92" rx="4"/><rect x="484" y="20" width="196" height="92" rx="4"/>
+<path d="M221 66h26M453 66h26" class="dg-a"/></g>
+<g class="lbl-k"><text x="36" y="46">Control relay</text><text x="268" y="46">Contactor</text><text x="500" y="46">Motor starter</text></g>
+<g class="lbl-s"><text x="36" y="70">Pilot-duty switching.</text><text x="36" y="88">Small loads, lots</text><text x="36" y="104">of contacts.</text>
+<text x="268" y="70">Heavy main contacts.</text><text x="268" y="88">Switches high current.</text><text x="268" y="104">No overload.</text>
+<text x="500" y="70">Contactor plus an</text><text x="500" y="88">overload relay. Switches</text><text x="500" y="104">and protects a motor.</text>
+<text x="20" y="150">All three share one idea: a small control-circuit coil operates</text>
+<text x="20" y="168">contacts that carry the power circuit.</text></g></svg>`
+};
+
+/* ============================ RENDER: STUDY GUIDE ============================ */
+const LTR = ["A","B","C","D","E"];
+const qlist = document.getElementById("qlist");
+
+function ttTable(vals){
+  const rows = [["0","0"],["0","1"],["1","0"],["1","1"]];
+  return `<div class="svgwrap" style="display:inline-block;padding:8px"><table class="tt">
+    <tr><th>A</th><th>B</th><th>Y</th></tr>
+    ${rows.map((r,i)=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td class="y">${vals[i]}</td></tr>`).join("")}
+  </table></div>`;
+}
+
+function qcard(d){
+  const el = document.createElement("article");
+  el.className = "rung reveal" + (d.miss ? " missed" : "");
+  el.dataset.test = d.t;
+  el.dataset.miss = d.miss ? 1 : 0;
+  el.dataset.text = (d.q + " " + (d.o||[]).join(" ") + " " + (d.w||"")).toLowerCase();
+
+  let body = "";
+  if (d.img && SVG[d.img]) body += `<figure><div class="svgwrap">${SVG[d.img]}</div><figcaption>Figure from the test</figcaption></figure>`;
+  if (d.tt) body += ttTable(d.tt);
+  if (d.o) body += `<ul class="opts">${d.o.map((o,i)=>
+      `<li class="${i===d.a?"right":""}"><span class="ltr">${LTR[i]}.</span><span>${o}</span></li>`).join("")}</ul>`;
+  if (d.match) body += `<ul class="matchlist">${d.match.map(m=>
+      `<li><span class="ltr">${m[0]}</span><span>${m[1]}</span></li>`).join("")}</ul>`;
+
+  let ans = "";
+  if (d.fill) ans = `<div class="ansline"><span class="lbl">Answer</span>${d.fill}</div>`;
+  else if (d.tt) ans = `<div class="ansline"><span class="lbl">Answer — Y column, top to bottom</span>${d.tt.join(" · ")}</div>`;
+
+  el.innerHTML = `<div class="gutter"><span class="tag">${d.n}</span></div>
+    <div class="qbody">
+      <div class="qtype"><span>${d.ty}</span>${d.miss?'<span class="flag">missed on test</span>':""}${d.trunc?'<span class="flag">cut off in PDF</span>':""}</div>
+      <p class="qtext">${d.q}</p>
+      ${body}${ans}
+      ${d.w?`<p class="why"><b>Why</b>${d.w}</p>`:""}
+    </div>`;
+  return el;
+}
+
+function buildGuide(){
+  qlist.innerHTML = "";
+  [1,2].forEach(t=>{
+    const h = document.createElement("div");
+    h.className = "grouphead";
+    h.dataset.test = t;
+    h.innerHTML = t===1
+      ? `<h2>Test 1</h2><span class="meta">CH 1, 2, 4 + Logic Gates · 44 questions · submitted 6/18/26</span>`
+      : `<h2>Test 2</h2><span class="meta">CH 6, 7 + Circuits · 40 questions · submitted 7/9/26</span>`;
+    qlist.appendChild(h);
+    Q.filter(d=>d.t===t).forEach(d=>qlist.appendChild(qcard(d)));
+    if(t===2){
+      const n = document.createElement("div");
+      n.className = "note"; n.dataset.test = 2;
+      n.innerHTML = `<b>Question 40 is not in the PDF.</b> The export stops partway through question 39, so its
+        remaining options and all of question 40 were never captured. The score arithmetic
+        (35.87 ÷ 40 = 89.68%) confirms the test had 40 questions.`;
+      qlist.appendChild(n);
+    }
+  });
+}
+buildGuide();
+
+let fTest="all", fMissed=false, fText="";
+function applyFilter(){
+  let shown=0;
+  qlist.querySelectorAll(".rung").forEach(el=>{
+    const ok = (fTest==="all"||el.dataset.test===fTest)
+            && (!fMissed || el.dataset.miss==="1")
+            && (!fText || el.dataset.text.includes(fText));
+    el.hidden = !ok; if(ok) shown++;
+  });
+  qlist.querySelectorAll(".grouphead,.note").forEach(el=>{
+    const any = [...qlist.querySelectorAll('.rung[data-test="'+el.dataset.test+'"]')].some(r=>!r.hidden);
+    el.hidden = !any || (fTest!=="all" && el.dataset.test!==fTest);
+  });
+  document.getElementById("qcount").textContent = shown + " question" + (shown===1?"":"s");
+}
+document.querySelectorAll("[data-test]").forEach(b=>{
+  if(b.tagName!=="BUTTON") return;
+  b.addEventListener("click",()=>{
+    document.querySelectorAll(".seg [data-test]").forEach(x=>x.setAttribute("aria-pressed","false"));
+    b.setAttribute("aria-pressed","true"); fTest=b.dataset.test; applyFilter();
+  });
+});
+document.getElementById("onlyMissed").addEventListener("click",e=>{
+  fMissed=!fMissed; e.currentTarget.setAttribute("aria-pressed",fMissed);
+  e.currentTarget.textContent = fMissed ? "Missed only ✓" : "Missed only"; applyFilter();
+});
+document.getElementById("qsearch").addEventListener("input",e=>{
+  fText = e.target.value.trim().toLowerCase(); applyFilter();
+});
+document.getElementById("toggleAns").addEventListener("click",e=>{
+  const on = e.currentTarget.getAttribute("aria-pressed")==="true";
+  e.currentTarget.setAttribute("aria-pressed", !on);
+  e.currentTarget.textContent = on ? "Answers hidden" : "Answers shown";
+  qlist.querySelectorAll(".rung").forEach(el=>el.classList.toggle("hidden-ans", on));
+});
+applyFilter();
+
+/* ============================ RENDER: CONCEPTS ============================ */
+const CONCEPTS = [
+{h:"Safety is about current, not voltage",tag:"CH 1",html:`
+  <p>Voltage above <b>30 V</b> is treated as dangerous, but what injures you is the current that finds
+  a path through your body.</p>
+  <figure><div class="svgwrap">${SVG.shock}</div><figcaption>Roughly what each current level does</figcaption></figure>
+  <p class="pull"><b>Test trap:</b> 100 mA is <b>not</b> "rarely fatal" — it is the fibrillation range.</p>`},
+
+{h:"Lockout / tagout",tag:"CH 1",html:`
+  <ul class="kv">
+    <li><span class="k">Lockout</span><span>A physical lock holds the energy source in the safe position.</span></li>
+    <li><span class="k">Tagout</span><span>A danger tag on the source says the equipment may not be operated until the tag is removed.</span></li>
+    <li><span class="k">The rule</span><span>Only the person who applied a device may remove it. No exceptions, no favors.</span></li>
+  </ul>
+  <p class="pull"><b>Confined space:</b> restrictive entrance or exit by location, size or means.</p>`},
+
+{h:"Arc flash and electrocution response",tag:"CH 1",html:`
+  <p>An arc reaches roughly 35,000 °F. <b>Arc burns</b> come from that heat near the body — you do not
+  have to touch anything. Arc flash causes a large share of electrical workplace injuries.</p>
+  <p>If a victim is still in contact with current, the order is fixed:</p>
+  <ul class="kv">
+    <li><span class="k">1</span><span>Kill the power or separate the victim from it.</span></li>
+    <li><span class="k">2</span><span>Call for help.</span></li>
+    <li><span class="k">3</span><span>Loosen tight clothing, give artificial respiration.</span></li>
+  </ul>`},
+
+{h:"Anatomy of a rung",tag:"CH 4",wide:1,html:`
+  <p>A ladder diagram is read like a book: left to right, top to bottom. <b>L1</b> and <b>L2</b> are the
+  vertical rails; each horizontal <b>rung</b> is one complete circuit. Inputs (contacts) go on the left,
+  the <b>load</b> goes at the L2 end.</p>
+  <figure><div class="svgwrap">${SVG.rung}</div><figcaption>Contacts left, load right, always</figcaption></figure>
+  <ul class="kv">
+    <li><span class="k">Loads</span><span>Multiple loads in a rung go in <b>parallel</b> so each sees full L1–L2 voltage.</span></li>
+    <li><span class="k">Starts</span><span>Extra START buttons go in <b>parallel</b> — any one starts it.</span></li>
+    <li><span class="k">Stops</span><span>Extra STOP buttons go in <b>series</b> — any one stops it.</span></li>
+    <li><span class="k">Wire nos.</span><span>All wires landing on the same point carry the <b>same number</b>.</span></li>
+    <li><span class="k">NC mark</span><span>A normally closed contact's reference number is <b>underlined</b>.</span></li>
+  </ul>`},
+
+{h:"Power circuit vs. control circuit",tag:"CH 4 · 7",html:`
+  <ul class="kv">
+    <li><span class="k">Power</span><span>Heavy lines. Carries load current — the conductors feeding a motor live here.</span></li>
+    <li><span class="k">Control</span><span>Light lines. Carries the low-current logic — buttons, coils, pilot lights.</span></li>
+  </ul>
+  <p class="pull">A magnetic contactor involves exactly <b>two</b> circuits, and they are these two.</p>`},
+
+{h:"The four drawing types",tag:"CH 6",html:`
+  <ul class="kv">
+    <li><span class="k">Ladder</span><span>Electrical connections and logic. Not physical location.</span></li>
+    <li><span class="k">Wiring</span><span>Actual physical wiring and terminal landings.</span></li>
+    <li><span class="k">Single-line</span><span>The whole distribution path drawn as one conductor: supply → disconnect → overcurrent → starter → motor.</span></li>
+    <li><span class="k">Block</span><span>Major functional parts as blocks rather than symbols.</span></li>
+  </ul>`},
+
+{h:"Poles, throws and breaks",tag:"CH 2 · 7",wide:1,html:`
+  <ul class="kv">
+    <li><span class="k">Pole</span><span>How many separate circuits the switch controls.</span></li>
+    <li><span class="k">Throw</span><span>How many closed contact positions each pole has.</span></li>
+    <li><span class="k">Break</span><span>How many points a single contact opens the circuit at — <b>one or two</b>. Double-break kills the arc faster.</span></li>
+  </ul>
+  <figure><div class="svgwrap">${SVG.poles}</div><figcaption>The four combinations you'll be asked to name</figcaption></figure>`},
+
+{h:"Normally open, normally closed",tag:"CH 4",html:`
+  <p>"Normally" always describes the <b>de-energized, at-rest</b> state.</p>
+  <ul class="kv">
+    <li><span class="k">N.O.</span><span>Open at rest. Pressing <b>makes</b> the circuit; releasing returns it to open.</span></li>
+    <li><span class="k">N.C.</span><span>Closed at rest. Pressing <b>breaks</b> the circuit; releasing returns it to closed.</span></li>
+  </ul>
+  <p class="pull">One pushbutton assembly can carry several stacked contact blocks — NO and NC together.
+  A <b>mushroom head</b> operator means emergency stop.</p>`},
+
+{h:"Sensors: what detects what",tag:"CH 2",html:`
+  <ul class="kv">
+    <li><span class="k">Limit</span><span>Mechanically operated by a moving machine part.</span></li>
+    <li><span class="k">Float</span><span>Senses liquid <b>height</b> (level).</span></li>
+    <li><span class="k">Inductive</span><span>Sensor <b>coil</b> + oscillator + trigger + output switch. Metal only.</span></li>
+    <li><span class="k">Capacitive</span><span>Sensor <b>plate</b> instead of a coil. Detects nonconductive material too.</span></li>
+    <li><span class="k">Photoelectric</span><span>Uses light to detect presence or absence.</span></li>
+  </ul>
+  <p class="pull"><b>Test trap:</b> coil = inductive, plate = capacitive. Both questions were written to
+  swap those two words on you.</p>`},
+
+{h:"Three ways to sense with light",tag:"CH 2",wide:1,html:`
+  <figure><div class="svgwrap">${SVG.photo}</div><figcaption>Only through-beam splits the emitter and receiver</figcaption></figure>
+  <p class="pull">A <b>safety light curtain</b> is just a stack of through-beam pairs: an <b>emitter</b>
+  on one side, a <b>receiver</b> on the other.</p>`},
+
+{h:"Sensors in, actuators out",tag:"CH 2",html:`
+  <ul class="kv">
+    <li><span class="k">Inputs</span><span>Pushbuttons, limit switches, float switches, proximity and photoelectric sensors, <b>tachometers</b>.</span></li>
+    <li><span class="k">Outputs</span><span>Solenoids, relays, motors, pilot lights.</span></li>
+  </ul>
+  <p>A solenoid valve can control hydraulic, pneumatic <em>or</em> water flow — same solenoid, different
+  valve body.</p>`},
+
+{h:"Relay, contactor, starter",tag:"CH 7",wide:1,html:`
+  <figure><div class="svgwrap">${SVG.hierarchy}</div><figcaption>Same principle, three sizes of job</figcaption></figure>
+  <ul class="kv">
+    <li><span class="k">EMR</span><span>An electromagnet used to switch contacts. Usually one coil, any number of contacts. Coil terminals are <b>A1</b> and <b>A2</b>.</span></li>
+    <li><span class="k">Interposing</span><span>Lets a low-power signal (a PLC output) switch a higher-power circuit.</span></li>
+    <li><span class="k">Overload</span><span>Protects motors, control equipment and branch conductors from <b>excessive heating</b> from overloads and failure to start.</span></li>
+    <li><span class="k">Inrush</span><span>An AC motor draws about <b>20×</b> full-load current at startup — which is why overloads are time-delayed.</span></li>
+  </ul>`},
+
+{h:"Ratings you have to keep straight",tag:"CH 7",html:`
+  <ul class="kv">
+    <li><span class="k">Contacts</span><span>Inrush (make) capacity · normal continuous carrying capacity · opening (break) capacity.</span></li>
+    <li><span class="k">Coil</span><span>AC or DC · operating voltage and current · permissible voltage variation · resistance · power rating.</span></li>
+  </ul>
+  <p class="pull">Contact ratings describe the <b>load</b> side. Coil ratings describe the <b>control</b>
+  side. Answers that mix the two are always the distractors.</p>`},
+
+{h:"Solid-state relays",tag:"CH 7",html:`
+  <ul class="kv">
+    <li><span class="k">vs EMR</span><span>No moving parts — that is the fundamental difference.</span></li>
+    <li><span class="k">AC switch</span><span>A <b>triac</b>, because it conducts in both directions.</span></li>
+    <li><span class="k">SCR</span><span>Latching switch: fully ON like a closed contact, or fully OFF like an open one.</span></li>
+    <li><span class="k">Methods</span><span>Zero · instant-on · peak · analog switching. <b>Phase-angle is not one of them.</b></span></li>
+  </ul>`},
+
+{h:"Reading logic gates",tag:"Logic",wide:1,html:`
+  <figure><div class="svgwrap">${SVG.gates}</div><figcaption>The exact five symbols on both tests, in exam order</figcaption></figure>
+  <p>Two features decide everything: the <b>back</b> of the body and whether there's a <b>bubble</b> on the
+  nose. Flat back = AND family. Curved back = OR family. Bubble = inverted. A second curved line across an
+  OR back = exclusive.</p>`},
+
+{h:"Five truth tables",tag:"Logic",wide:1,html:`
+  <div class="svgwrap" style="display:flex;gap:22px;flex-wrap:wrap">
+  <table class="tt"><tr><th>A</th><th>B</th><th>AND</th></tr><tr><td>0</td><td>0</td><td class="y">0</td></tr><tr><td>0</td><td>1</td><td class="y">0</td></tr><tr><td>1</td><td>0</td><td class="y">0</td></tr><tr><td>1</td><td>1</td><td class="y">1</td></tr></table>
+  <table class="tt"><tr><th>A</th><th>B</th><th>OR</th></tr><tr><td>0</td><td>0</td><td class="y">0</td></tr><tr><td>0</td><td>1</td><td class="y">1</td></tr><tr><td>1</td><td>0</td><td class="y">1</td></tr><tr><td>1</td><td>1</td><td class="y">1</td></tr></table>
+  <table class="tt"><tr><th>A</th><th>B</th><th>NAND</th></tr><tr><td>0</td><td>0</td><td class="y">1</td></tr><tr><td>0</td><td>1</td><td class="y">1</td></tr><tr><td>1</td><td>0</td><td class="y">1</td></tr><tr><td>1</td><td>1</td><td class="y">0</td></tr></table>
+  <table class="tt"><tr><th>A</th><th>B</th><th>NOR</th></tr><tr><td>0</td><td>0</td><td class="y">1</td></tr><tr><td>0</td><td>1</td><td class="y">0</td></tr><tr><td>1</td><td>0</td><td class="y">0</td></tr><tr><td>1</td><td>1</td><td class="y">0</td></tr></table>
+  <table class="tt"><tr><th>A</th><th>B</th><th>X-OR</th></tr><tr><td>0</td><td>0</td><td class="y">0</td></tr><tr><td>0</td><td>1</td><td class="y">1</td></tr><tr><td>1</td><td>0</td><td class="y">1</td></tr><tr><td>1</td><td>1</td><td class="y">0</td></tr></table>
+  </div>
+  <p class="pull">Learn two and derive the rest: <b>NAND is AND flipped</b>, <b>NOR is OR flipped</b>, and
+  <b>X-OR is 1 only when the inputs differ</b>.</p>`},
+
+{h:"Gates drawn as contacts",tag:"Logic · CH 4",wide:1,html:`
+  <p>Both tests ask you to name a gate from a <em>rung</em>, not from a symbol. The translation is short
+  enough to memorize outright.</p>
+  <figure><div class="svgwrap">${SVG.logicrungs}</div><figcaption>Series = AND family · Parallel = OR family · NC contacts = inverted</figcaption></figure>`},
+
+{h:"Panel parts by silhouette",tag:"CH 6",wide:1,html:`
+  <ul class="kv">
+    <li><span class="k">PLC</span><span>Modular rack — power supply and CPU, then plug-in I/O cards side by side.</span></li>
+    <li><span class="k">HMI</span><span>Display and keypad. The operator's window into the machine.</span></li>
+    <li><span class="k">Motor starter</span><span>Contactor with an overload block bolted underneath.</span></li>
+    <li><span class="k">Disconnect</span><span>Enclosed switch with an external handle you can padlock.</span></li>
+    <li><span class="k">Terminal block</span><span>Rows of small numbered terminals on DIN rail, often color coded.</span></li>
+    <li><span class="k">Transformer</span><span>Laminated iron core wrapped in windings, primary and secondary leads.</span></li>
+    <li><span class="k">Network switch</span><span>DIN-rail box with a row of RJ45 ports and link LEDs.</span></li>
+    <li><span class="k">Circuit breaker</span><span>Modular DIN-rail poles with trip levers. Switches <em>and</em> protects.</span></li>
+  </ul>`},
+
+{h:"Symbols worth memorizing cold",tag:"CH 6 · 7",wide:1,html:`
+  <div class="concepts" style="gap:12px">
+    <figure><div class="svgwrap">${SVG.coil}</div><figcaption>Plain circle = coil</figcaption></figure>
+    <figure><div class="svgwrap">${SVG.xfmr}</div><figcaption>Two windings = transformer</figcaption></figure>
+    <figure><div class="svgwrap">${SVG.disc}</div><figcaption>Ganged blades = disconnect</figcaption></figure>
+    <figure><div class="svgwrap">${SVG.starter}</div><figcaption>Contacts + heaters = motor starter</figcaption></figure>
+    <figure><div class="svgwrap">${SVG.spdt}</div><figcaption>One common, two outputs = SPDT</figcaption></figure>
+  </div>
+  <p class="pull">Three of the four questions missed on Test 2 were symbol-identification questions.
+  This block is the highest-value thing on the page.</p>`}
+];
+
+document.getElementById("concepts").innerHTML = CONCEPTS.map(c=>
+  `<section class="card${c.wide?" wide":""}"><h3>${c.h}<span>${c.tag}</span></h3>${c.html}</section>`).join("");
+
+/* ============================ RENDER: FLASHCARDS ============================ */
+const cats = [...new Set(CARDS.map(c=>c[0]))];
+let deck = CARDS.slice(), idx = 0, cat = "All";
+
+const df = document.getElementById("deckfilter");
+["All",...cats].forEach(c=>{
+  const b = document.createElement("button");
+  b.className="pill"; b.textContent=c; b.setAttribute("aria-pressed", c==="All");
+  b.addEventListener("click",()=>{
+    cat=c; df.querySelectorAll(".pill").forEach(p=>p.setAttribute("aria-pressed",p===b));
+    deck = c==="All" ? CARDS.slice() : CARDS.filter(x=>x[0]===c);
+    idx=0; show();
+  });
+  df.appendChild(b);
+});
+
+const c3 = document.getElementById("card3d");
+function show(){
+  c3.classList.remove("flipped");
+  const c = deck[idx] || ["","",""];
+  document.getElementById("fcat").textContent = c[0];
+  document.getElementById("bcat").textContent = c[0];
+  document.getElementById("fq").textContent = c[1];
+  document.getElementById("fa").innerHTML = "<strong>"+c[1]+"</strong>"+c[2];
+  document.getElementById("prog").textContent = (idx+1)+" / "+deck.length;
+  document.getElementById("bar").style.width = ((idx+1)/deck.length*100)+"%";
+  document.getElementById("deckcount").textContent = deck.length + " cards";
+}
+function move(n){ idx = (idx + n + deck.length) % deck.length; show(); }
+c3.addEventListener("click",()=>c3.classList.toggle("flipped"));
+document.getElementById("next").addEventListener("click",()=>move(1));
+document.getElementById("prev").addEventListener("click",()=>move(-1));
+document.getElementById("shuffle").addEventListener("click",()=>{
+  for(let i=deck.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[deck[i],deck[j]]=[deck[j],deck[i]];}
+  idx=0; show();
+});
+document.addEventListener("keydown",e=>{
+  if(document.getElementById("panel-cards").hidden) return;
+  if(e.target.tagName==="INPUT") return;
+  if(e.key==="ArrowRight"){e.preventDefault();move(1);}
+  else if(e.key==="ArrowLeft"){e.preventDefault();move(-1);}
+  else if(e.key===" "||e.key==="Enter"){e.preventDefault();c3.classList.toggle("flipped");}
+  else if(e.key.toLowerCase()==="s"){document.getElementById("shuffle").click();}
+});
+show();
+
+/* ============================ THEME ============================ */
+const root=document.documentElement;
+const saved=localStorage.getItem("theme");
+if(saved) root.setAttribute("data-theme",saved);
+document.getElementById("themetoggle").addEventListener("click",()=>{
+  const dark=matchMedia("(prefers-color-scheme: dark)").matches;
+  const now=root.getAttribute("data-theme")||(dark?"dark":"light");
+  const next=now==="dark"?"light":"dark";
+  root.setAttribute("data-theme",next);
+  localStorage.setItem("theme",next);
+});
+
+/* ============================ TABS ============================ */
+document.querySelectorAll(".tab").forEach(t=>{
+  t.addEventListener("click",()=>{
+    document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected","false"));
+    t.setAttribute("aria-selected","true");
+    const p = t.dataset.panel;
+    ["guide","concepts","cards"].forEach(k=>{
+      document.getElementById("panel-"+k).hidden = (k!==p);
+    });
+    document.getElementById("tb-guide").hidden = (p!=="guide");
+    document.getElementById("tb-cards").hidden = (p!=="cards");
+    window.scrollTo({top:0,behavior:"instant"});
+  });
+});
+</script>
+
+</body>
+</html>
