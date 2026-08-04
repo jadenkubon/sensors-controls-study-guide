@@ -139,6 +139,11 @@ main{max-width:1080px;margin:0 auto;padding:30px 20px 90px}
 .qtype{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
   color:var(--ink-3);margin-bottom:5px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 .flag{color:var(--fault);border:1px solid currentColor;border-radius:2px;padding:1px 5px;font-size:9px}
+.ansbtn{margin-left:auto;background:transparent;border:1px solid var(--hair);border-radius:3px;
+  padding:3px 10px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-2);white-space:nowrap;line-height:1.5;flex:none}
+.ansbtn:hover{border-color:var(--rail);color:var(--ink)}
+.hidden-ans .ansbtn{color:var(--accent-ink);border-color:var(--accent)}
 .qtext{font-size:16.5px;margin:0 0 11px;line-height:1.45}
 .qtext em{font-style:normal;border-bottom:2px solid var(--accent);padding-bottom:1px}
 .opts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px}
@@ -693,7 +698,7 @@ function qcard(d){
 
   el.innerHTML = `<div class="gutter"><span class="tag">${d.n}</span></div>
     <div class="qbody">
-      <div class="qtype"><span>${d.ty}</span>${d.miss?'<span class="flag">missed on test</span>':""}${d.trunc?'<span class="flag">cut off in PDF</span>':""}</div>
+      <div class="qtype"><span>${d.ty}</span>${d.miss?'<span class="flag">missed on test</span>':""}${d.trunc?'<span class="flag">cut off in PDF</span>':""}<button class="ansbtn" type="button" aria-expanded="true">Hide answer</button></div>
       <p class="qtext">${d.q}</p>
       ${body}${ans}
       ${d.w?`<p class="why"><b>Why</b>${d.w}</p>`:""}
@@ -753,11 +758,26 @@ document.getElementById("onlyMissed").addEventListener("click",e=>{
 document.getElementById("qsearch").addEventListener("input",e=>{
   fText = e.target.value.trim().toLowerCase(); applyFilter();
 });
+function syncAnsBtn(rung){
+  const b = rung.querySelector(".ansbtn"); if(!b) return;
+  const hidden = rung.classList.contains("hidden-ans");
+  b.textContent = hidden ? "Show answer" : "Hide answer";
+  b.setAttribute("aria-expanded", String(!hidden));
+}
+qlist.addEventListener("click",e=>{
+  const b = e.target.closest(".ansbtn"); if(!b) return;
+  const rung = b.closest(".rung");
+  rung.classList.toggle("hidden-ans");
+  syncAnsBtn(rung);
+});
 document.getElementById("toggleAns").addEventListener("click",e=>{
   const on = e.currentTarget.getAttribute("aria-pressed")==="true";
   e.currentTarget.setAttribute("aria-pressed", !on);
   e.currentTarget.textContent = on ? "Answers hidden" : "Answers shown";
-  qlist.querySelectorAll(".rung").forEach(el=>el.classList.toggle("hidden-ans", on));
+  qlist.querySelectorAll(".rung").forEach(el=>{
+    el.classList.toggle("hidden-ans", on);
+    syncAnsBtn(el);
+  });
 });
 applyFilter();
 
